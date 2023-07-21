@@ -18,5 +18,16 @@ window.onload = function (evt) {
   document.body.addEventListener('click', evt => {
     evt.target.classList.toggle('mirror')  
   })
+
+  //DOUBLE CLICK EVENT
+  document.body.addEventListener('dblclick', evt => {
+      evt.target.innerHTML = ''
+  })
+  //KEYDOWN EVENT
+  window.addEventListener('keydown', evt => {
+      if (evt.key === 6) {
+        document.body.innerHTML = 'YOU RAN ORDER 66'
+      }
+  })
 }
 
