@@ -26,8 +26,24 @@ window.onload = function (evt) {
   //KEYDOWN EVENT
   window.addEventListener('keydown', evt => {
       if (evt.key === 6) {
-        document.body.innerHTML = 'YOU RAN ORDER 66'
+        document.body.innerHTML = '<h1>YOU RAN ORDER 66</h1>'
       }
   })
+  //MOUSE-MOVE EVENT
+  document.body.addEventListener('mousemove', evt => {
+    const { clientX, clientY } = evt
+    //console.log(`mouse is at ${evt.clientX}, ${evt.clientY}`)
+  })
+  //MOUSE ENTER EVENT
+  const destinations = document.querySelectorAll('.destination')
+  for (let destination of destinations) {
+    destination.addEventListener('mouseenter', () => {
+        destination.computedStyleMap.fontWeight = 'bold'
+    })
+    destination.addEventListener('mouseleave', () => {
+        setTimeout(() => {
+        destination.computedStyleMap.fontWeight = 'initial'
+    }, 500)
+  })
+  }
 }
-
